@@ -21,10 +21,15 @@ def check_root_full():
     """Returns True if the root partition is full, False otherwise."""
     return check_disk_full(disk="/", min_gb=2, min_percent=10)
 
+def check_cpu_constrained():
+    """Returns True if the cpu is having too much usage, False otherwise."""
+    return psetil.cpu_percent(1)> 75
+
 def main():
     checks=[
         (check_reboot, "Pending Reboot"),
         (check_root_full, "Root partition full"),
+        (check_cpu_constrained, "CPU too much")
     ]
     everything_ok = True
     for check, msg in checks:
