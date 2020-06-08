@@ -3,4 +3,4 @@ Scripts that check the health of my computers
 
 This repo will be populated with lots of fancy checks.
 
-Experimental Repo
+Experimental Repo for fun
