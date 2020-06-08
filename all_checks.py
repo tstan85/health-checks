@@ -14,11 +14,13 @@ def main():
     print("Everything ok.")
     sys.exit(0)
 
-def check_disk_full(disk, min_absolute, min_percent):
-    if min_absolute > 2:
+def check_disk_full(disk, min_gb, min_percent):
+    if min_gb > 2:
         return disk
     if min_percent < 19:
         print("All good")
     sys.exit(0)
+
+print("try printing more things.")
 
 main()
